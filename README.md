@@ -218,21 +218,8 @@ Use `Bearer {{token}}` in headers for secured routes.
   "message": "Invalid entry ID",
   "code": 400
 }
-```
 
 ---
-
-## 📧 Submission
-
-- Push code to **public GitHub repo**
-- Include:
-  - `README.md`
-  - `.env.example` (no real secrets)
-  - Postman collection
-- Email the repo link to: **info@koders.in**
-
----
-
 ## 👨‍💻 Author
 
 > Created as part of the **Koders Backend Developer Assignment – 2025**  
