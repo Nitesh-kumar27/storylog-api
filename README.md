@@ -32,7 +32,7 @@
 ### 1. Clone & Install
 
 ```bash
-git clone [https://github.com/yourusername/storylog-api.git](https://github.com/Nitesh-kumar27/-storylog-api)
+git clone https://github.com/Nitesh-kumar27/storylog-api
 cd storylog-api
 npm install
 ```
