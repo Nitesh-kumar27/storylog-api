@@ -218,7 +218,7 @@ Use `Bearer {{token}}` in headers for secured routes.
   "message": "Invalid entry ID",
   "code": 400
 }
-
+```
 ---
 ## 👨‍💻 Author
 
