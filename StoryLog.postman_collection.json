@@ -1,0 +1,354 @@
+{
+	"info": {
+		"_postman_id": "29a0956f-6a70-45de-a4a4-3a1b4cc7a23f",
+		"name": "StoryLog",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "45566835",
+		"_collection_link": "https://dark-resonance-3413802.postman.co/workspace/Name.surname's-Workspace~e25bd057-4a9c-4811-88d4-43e4c4b874e3/collection/45566835-29a0956f-6a70-45de-a4a4-3a1b4cc7a23f?action=share&source=collection_link&creator=45566835"
+	},
+	"item": [
+		{
+			"name": "health_check",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/health",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"health"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "register",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"abc\",\r\n  \"email\": \"abc\",\r\n  \"password\": \"abc\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/auth/register",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login_user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"abc\",\r\n  \"password\": \"abc\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/auth/login",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Journal Entry",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"A Good Day\",\r\n  \"body\": \"Today is good day, i enjoy this day because of koders assignment\",\r\n  \"moodTags\": [\"productive\", \"happy\"],\r\n  \"moodScore\": 3\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/entries",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"entries"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get Journal Entries",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/entries",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"entries"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get Journal Entries by moodtag",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/entries/?tag=happy",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"entries",
+						""
+					],
+					"query": [
+						{
+							"key": "tag",
+							"value": "happy"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get Journal Entries by data range",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/entries/?start=2024-01-01&end=2025-12-31",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"entries",
+						""
+					],
+					"query": [
+						{
+							"key": "start",
+							"value": "2024-01-01"
+						},
+						{
+							"key": "end",
+							"value": "2025-12-31"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get Journal Entries by keyword",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/entries/?tag=happy",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"entries",
+						""
+					],
+					"query": [
+						{
+							"key": "tag",
+							"value": "happy"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get Journal entries by id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/entries/684874c15a47101210c232e1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"entries",
+						"684874c15a47101210c232e1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update journal entry by id",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"Updated Entry Title\",\r\n  \"body\": \"This is an updated version of  entry having more then ten words\",\r\n  \"moodTags\": [\"relaxed\", \"grateful\"],\r\n  \"moodScore\": 4\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/entries/6848e9d1952981afc0a725dd",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"entries",
+						"6848e9d1952981afc0a725dd"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete journal entry by id",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/entries/6848e9d1952981afc0a725dd",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"entries",
+						"6848e9d1952981afc0a725dd"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Stats Summary",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/entries/summary",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"entries",
+						"summary"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
